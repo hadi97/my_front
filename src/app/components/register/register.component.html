@@ -1,0 +1,35 @@
+<div class="container">
+    <div *ngIf="isSignedUp===true && correctData===true" class="alert alert-success">
+        <strong>Account is created</strong> 
+      </div>
+      <div *ngIf="isSignedUp===false || correctData===false" class="alert alert-warning">
+          <strong>Warning</strong>{{warning}}
+        </div>
+  <form (submit)="registerUser($event)" class="form-signin">
+    <h2 class="form-signin-heading">Registeration</h2>
+    <label>Name :</label>
+    <input class="form-control" id="name" required autofocus>
+    <label>Surname :</label>
+    <input class="form-control" id="surname" required autofocus>
+    <label>Pesel :</label>
+    <input class="form-control" id="pesel" placeholder="11223344556" required autofocus>
+    <label>City :</label>
+    <input class="form-control" id="city"  required autofocus>
+    <label>Adress :</label>
+    <input class="form-control" id="address" required autofocus>
+    <label>Postal code</label>
+    <input class="form-control" id="zipcode" placeholder="11-222" required autofocus>
+    <label>Telephone :</label>
+    <input class="form-control" id="phone" placeholder="111222333" required autofocus>
+    <label>Birthdate :</label>
+    <input class="form-control" id="birthdate" placeholder="1999-09-30" required autofocus>
+    <label>Sex :</label>
+    <input class="form-control" id="sex" required autofocus>
+    <label>Email :</label>
+    <input class="form-control" id="email"placeholder="example@vp.pl" required autofocus>
+    <label>Password :</label>
+    <input type="password" id="password" class="form-control"  required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+  </form>
+
+</div> 

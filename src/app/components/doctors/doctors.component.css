@@ -1,0 +1,32 @@
+div{
+    background-color:lightgray;
+    margin:0px;
+    padding:0px;
+    min-height:470px;
+    width:100%;
+    display:inline-block;
+}
+
+
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+
+#content{
+    height:640px;
+}
+
+#head{
+    margin-top:5px;
+    margin-left:40px;
+    font-size:25px;
+    font-weight: 600;
+}

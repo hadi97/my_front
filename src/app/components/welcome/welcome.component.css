@@ -1,0 +1,32 @@
+img{
+    align-content: center;
+    width: 680px;
+    height:200px;
+ }
+
+div{
+    background-color:lightgray;
+    /*margin:0px;
+    /padding:0px;*/
+    min-height:550px;
+    display:inline-block;
+    font-size:20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#content{
+    height:640px;
+}
+
+
+
+p{
+    margin-left:10px;
+    margin-right:15px;
+}
+
+#welcome{
+    font-size: 25px;
+}
+
+
