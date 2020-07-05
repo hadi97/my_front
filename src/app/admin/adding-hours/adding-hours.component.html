@@ -1,0 +1,30 @@
+
+<div>
+    <form (submit)="addNewWorkingHour($event)" >
+      <div class="container">
+      <h1>Add working hours for the doctor</h1>
+      <p>Please fill the fields to add new working hours for the doctor</p>
+      <hr>
+
+      <label for="date">Choose a date:</label>
+
+      <input type="date" id="date" name="trip-start"
+             value="2020-02-01"
+             min="2020-01-01" max="2020-12-31">
+      
+
+      <label>Starting hour : </label>
+      <input  id="start" class="form-control" required autofocus>
+      <label>Ending hour : </label>
+      <input id="end" class="form-control" required autofocus>
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" id ="submit" type="submit">Save </button>
+      <br>
+    </div>
+      <div class="container signin">
+        <p><a href="#" routerLink="/calendar">Go back</a></p>
+      </div>
+   
+      </form>
+    </div>
+    

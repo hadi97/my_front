@@ -1,0 +1,30 @@
+<div class="container" id="content">  
+    <h2>The current schedule for the doctor : </h2>
+    <table class="table table-hover" id ="table">
+       <thead>
+         <tr>
+           <th scope="col">Date</th>
+           <th scope="col">Starting hour</th>
+           <th scope="col">Ending hour</th>
+         </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor="let    item of items">
+           
+           <td>{{item.dayName}}</td>
+           <td>{{item.startHour}}</td>
+           <td>{{item.endHour }}</td>
+         </tr>
+       </tbody>
+     </table>
+
+     <div>
+      <br>
+      <button class="btn btn-primary" id="add"routerLink="/add-hours">Add new hours</button>
+    </div>
+   </div>
+   
+  
+  
+  
+  

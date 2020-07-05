@@ -1,0 +1,24 @@
+<div id="healthHistoryArea">
+    <p><b>Healthcard history for {{visitDetails.patientName}}:</b></p>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Diseases</th>
+            <th scope="col">Medicines taken </th>
+            <th scope="col">Allergies</th>
+            <th scope="col">Bleeding</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of healthcards">
+              <td>{{item.date}}</td>
+              <td>{{item.diseases}}</td>
+              <td>{{item.medicines}}</td>
+              <td>{{item.allergies}}</td>
+              <td>{{item.bleeding}}</td>  
+            </tr>
+          </tbody>
+      </table>
+  </div>
+  <button class="back" [routerLink]="['/visitdetails',visitDetails.visitId]">Go back</button>

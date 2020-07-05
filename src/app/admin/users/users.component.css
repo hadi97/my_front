@@ -1,0 +1,72 @@
+select{
+  width:250px;
+  margin-left:10px;
+}
+#td{
+  width: 5px;
+}
+
+#delete {
+  background-color: red;
+  width: 100%;
+  margin-left: auto;
+}
+
+label{
+  margin-left:10px;
+  font-size:20px;
+}
+
+#addbutton{
+  margin-top:15px;
+  margin-left:10px;
+}
+
+#content{
+  min-height: 630px;
+}
+
+#table{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+#table td, #table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008CBA;
+  color: white;
+}
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+button {
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%; 
+  text-align: center;
+  font-size: 15px; 
+  color: white;
+  border-radius: 16px;
+  background-color: #4caf50;
+margin-top:15px;
+margin-left:10px;
+}
+
+

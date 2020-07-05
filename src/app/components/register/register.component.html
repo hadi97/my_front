@@ -4,32 +4,48 @@
       </div>
       <div *ngIf="isSignedUp===false || correctData===false" class="alert alert-warning">
           <strong>Warning</strong>{{warning}}
-        </div>
-  <form (submit)="registerUser($event)" class="form-signin">
-    <h2 class="form-signin-heading">Registeration</h2>
-    <label>Name :</label>
-    <input class="form-control" id="name" required autofocus>
-    <label>Surname :</label>
-    <input class="form-control" id="surname" required autofocus>
-    <label>Pesel :</label>
-    <input class="form-control" id="pesel" placeholder="11223344556" required autofocus>
-    <label>City :</label>
-    <input class="form-control" id="city"  required autofocus>
-    <label>Adress :</label>
-    <input class="form-control" id="address" required autofocus>
-    <label>Postal code</label>
-    <input class="form-control" id="zipcode" placeholder="11-222" required autofocus>
-    <label>Telephone :</label>
-    <input class="form-control" id="phone" placeholder="111222333" required autofocus>
-    <label>Birthdate :</label>
-    <input class="form-control" id="birthdate" placeholder="1999-09-30" required autofocus>
-    <label>Sex :</label>
-    <input class="form-control" id="sex" required autofocus>
-    <label>Email :</label>
-    <input class="form-control" id="email"placeholder="example@vp.pl" required autofocus>
-    <label>Password :</label>
-    <input type="password" id="password" class="form-control"  required>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-  </form>
+</div>
 
-</div> 
+
+<form (submit)="registerUser($event)" >
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="name"><b>Name</b></label>
+    <input id="name" type="text" placeholder="Enter your name" name="name" required>
+
+    <label for="surname"><b>Surname</b></label>
+    <input id="surname" type="text" placeholder="Enter your surname" name="surname" required>
+
+    <label for="email"><b>Email</b></label>
+    <input id="email" type="text" placeholder="Enter Email" name="email" required>
+
+
+    <label for="psw"><b>Password</b></label>
+    <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="Pesel"><b>Pesel</b></label>
+    <input name="Pesel" type="text" id="pesel" placeholder="11223344556" required >
+    
+    
+    <label for="adress"><b>Adress</b></label>
+    <input name="adress" type="text" id="address" required >
+    
+    
+    <label for="phone"><b>Telephone</b></label>
+    <input name="phone" type="text" id="phone" placeholder="111222333" required >
+    
+    <label for="sex"><b>Sex </b></label>
+    <input name="sex" type="text" id="sex" placeholder="male" required>
+  <hr>
+    <button type="submit" type="text" class="registerbtn">Register</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="#" routerLink="/login">Sign in</a>.</p>
+  </div>
+</form>
+
+</div>

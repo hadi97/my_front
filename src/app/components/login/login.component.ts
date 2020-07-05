@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   private loginInfo: LoginDto;
   isLoginFailed = false;
   errorMessage = '';
-  regexpEmail = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$');
   correctData:boolean;
   warningMessage:string;
   
@@ -32,38 +31,34 @@ export class LoginComponent implements OnInit {
     console.log("Start loginUser ");
     event.preventDefault()
     const target = event.target;
-    const email=target.querySelector('#username').value;
+    const username=target.querySelector('#username').value;
     const password=target.querySelector('#password').value;
-    console.log("email: "+ email);
+    console.log("email: "+ username);
     console.log("pass: "+ password);
 
-    if(this.regexpEmail.test(email)==true ){
-      this.correctData=true;
-    }else{
-      this.correctData=false;
-      this.warningMessage="Invalid email";
-    }
+    this.correctData=true;
 
     this.loginInfo = new LoginDto(
-      email,
+      username,
       password);
     
       if(this.correctData==true){
     this.authService.login(this.loginInfo).subscribe(
       data => {
         console.log("Login Info: " + data.username);
+        
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUsername(data.username);
         this.tokenStorage.saveAuthorities(data.authorities);
         this.tokenStorage.saveUserId(data.userId);
+        console.log("userId: "+ data.userId);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
         
         this.roles.every(role => { console.log("Role Info: " + role); return true});
-        
-        this.router.navigate(['/']);
+        this.router.navigate(['/myvisits']);
         this.reloadPage();
       },
       error => {

@@ -1,0 +1,37 @@
+<div>
+    <form (submit)="createUser($event)" >
+    <label>Role : </label>
+      <select class="form-control" id="role" (change)="onChange($event.target.value)">
+        <option value="patient">Patient</option>
+        <option value="doctor">Doctor</option>
+      </select>
+      <label>Email :</label>
+      <input id="email" class="form-control" placeholder="example@vp.pl" required autofocus>
+      <label>Name :</label>
+      <input  id="firstName" class="form-control" required autofocus>
+      <label>Surname :</label>
+      <input id="lastName" class="form-control" required autofocus>
+      <label *ngIf="userRole==='patient'">Adress :</label>
+      <input *ngIf="userRole==='patient'" id="address" class="form-control" required autofocus>
+      <label *ngIf="userRole==='patient'" >Pesel :</label>
+      <input *ngIf="userRole==='patient'" id="pesel" class="form-control" required autofocus>
+      <label>Telephone :</label>
+      <input id="phone" class="form-control" required autofocus>
+      <label *ngIf="userRole==='patient'" >Sex :</label>
+      <select *ngIf="userRole==='patient'" class="form-control" id="sex">
+        <option value="F">Female</option>
+        <option value="M">Male</option>
+      </select>
+
+
+      <label>Password :</label>
+      <input type="password" id="password" class="form-control" required>
+      
+      <br>
+      <button class="registerButton" id="registerButton" type="submit">Save</button>
+      <button class="back" routerLink="/users">Go back</button>
+    </form>
+    </div>
+
+
+    

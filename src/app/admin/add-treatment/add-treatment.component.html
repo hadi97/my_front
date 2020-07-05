@@ -1,0 +1,16 @@
+<div>
+    <form (submit)="addTreatment($event)" >
+      <label>Service name : </label>
+      <input id="treatmentName" class="form-control" required autofocus>
+      <label>Description : </label>
+      <input  id="description" class="form-control" required autofocus>
+      <label>Duration : </label>
+      <select id="period" class="form-control" >
+        <option value="20">20 minutes</option>
+        <option value="30">30 minutes</option>
+      </select>
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+      <button class="btn btn-secondary" routerLink="/admin-treatment">Go back</button>
+    </form>
+    </div>

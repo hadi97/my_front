@@ -1,0 +1,40 @@
+<div id="contentArea" class="container">
+
+      <div id="details">
+
+    <h3><b>Visit details : </b> </h3>
+    <p><b>Doctor  :</b> {{visitDetails.doctorName}}
+    </p>
+    <p><b>Patient : </b>{{visitDetails.patientName}}
+      </p>
+      <button *ngIf="userRole==='doctor'" [routerLink]="['/healthcards',visitDetails.visitId]" id="healthHistory" class="btn btn-primary">Show healthcard history</button>
+    <p><b> Date of visit </b>:
+     {{visitDetails.visitDate}}
+    </p>
+    <p><b>Service type : </b>{{visitDetails.treatmentName}}</p>
+
+    <p><b>Advice : </b>{{visitDetails.advice}} </p>
+    <p><b>Notes : </b>{{visitDetails.notes}} </p>
+    
+    <div *ngIf="userRole==='doctor' && archiveVisit===false " id="updateVisitInformations">
+    <form (submit)="setVisitNotes($event,visitDetails.visitId)">
+      <p><b> Update Note and advice : </b></p>
+      <label for="note"><b>Note</b></label>
+      <br>
+      <textarea id="note"></textarea>
+      <br><br>
+      <label for="advice"><b>Advice</b></label>
+      <br>
+      <textarea id="advice"></textarea>
+      <hr>
+    
+      <p><b>This button submit the changes and sets the visit as completed.</b></p>
+    <button class="btn btn-primary" id="submit" type="submit">Confirm</button>
+    </form>
+    </div>
+
+    </div>
+  </div>
+
+
+

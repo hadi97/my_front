@@ -1,0 +1,19 @@
+<div id="content">
+    <p id="head">Here you have the working hours for our Doctor. For further details you must be logged in.   </p>
+        <table class="table" id="table">
+            <thead>
+                <tr>
+                    <th scope="col">Day</th>
+                    <th scope="col">Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let item of items">
+
+                   <td>{{item.dayName}}</td>
+                   <td>{{item.startHour}} : {{item.endHour}}</td>
+                   <td><button class="btn btn-primary" [routerLink]="['/details', item.dayName]">See specefic available hours</button>
+                 </tr>
+               </tbody>
+        </table>
+</div> 

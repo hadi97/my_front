@@ -1,0 +1,34 @@
+<div class="container" id="content">
+    <p id="head">Available and non available hours for : {{id}}  </p>
+    <div class = "floatLeft">
+   
+    <table  class="table" id="table">
+            <thead>
+                <tr>
+                    <th scope="col">Available Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let item of periods">
+                   <td>{{item.hour}} </td>
+                  
+                   </tr>
+               </tbody>
+        </table>
+    </div>
+    <div class="floatRight">
+            <table  class="table" id="table">
+            <thead>
+                <tr>
+                    <th scope="col">Not Available Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let item of reserved">
+                   <td>{{item.hour}}</td>
+                  
+                   </tr>
+               </tbody>
+        </table>
+    </div>
+</div> 

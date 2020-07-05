@@ -1,0 +1,60 @@
+div{
+  background-color:white;
+  margin:0px;
+  padding:0px;
+  min-height:630px;
+  min-width: 100%;
+  width:100%;
+  height:auto;
+ 
+}
+form{
+  margin-top: 15px;
+  overflow-y:auto;
+}
+
+select{
+  width:250px;
+  margin-left:38%;
+
+}
+#registerButton{
+  background-color: #4C3f;
+}
+input,button{
+  width:250px;
+  margin-left: 38%;
+  margin-top:1px;
+  margin-bottom: 0.5px;
+}
+
+label{
+  font-weight:600;
+  margin-left:38%;
+}
+
+button{
+  height:43px;
+  font-size:20px;
+}
+div{
+  margin:0px;
+  padding:0px;
+  min-height:620px;
+  min-width: 100%;
+  width:100%;
+  height:auto; 
+}
+form{
+  margin-top:15px;
+  overflow-y:auto;
+}
+
+input,button, select{
+  width:250px;
+  margin-left: 38%;
+  margin-top:1px;
+  margin-bottom: 0.5px;
+}
+
+

@@ -1,0 +1,29 @@
+div{
+    background-color:white;
+    margin:0px;
+    padding:0px;
+    min-height:600px;
+    width:100%;
+    display:inline-block;
+}
+
+h3{
+    margin-top:15px;
+}
+
+img{
+    margin-top:5px;
+    margin-bottom:35px;
+}
+h3,img,p{
+    margin-left:20px;
+}
+
+#content{
+    height:640px;
+}
+
+p{
+    font-size:20px;
+}
+

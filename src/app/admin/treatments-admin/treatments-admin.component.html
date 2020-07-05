@@ -1,0 +1,25 @@
+<div class="container" id="content"> 
+<h2 id="head">Treatments  : </h2>
+    <table class="table table-hover" id="table">
+       <thead>
+         <tr>
+           <th scope="col">Id</th>
+           <th scope="col">Name</th>
+           <th scope="col">Description</th>
+         </tr>
+       </thead>
+
+       <tbody>
+          <tr *ngFor="let item of items">
+           <th scope="row">{{item.treatmentId}}</th>
+           <td>{{item.treatmentName}}</td>
+           <td>{{item.description}}</td>
+           <td id="td"><button id ="delete" class="btn btn-danger" (click)="deleteTreatment($event, item.treatmentId)">Delete</button></td>
+         </tr>
+       </tbody>
+     </table>
+   <div>
+    <button id="addbutton" class="btn btn-primary" routerLink="/addTreatment">Add new treatment </button>
+    <br><br>
+</div>
+</div>

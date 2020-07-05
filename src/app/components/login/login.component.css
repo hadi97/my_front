@@ -29,7 +29,9 @@ input[type=username], input[type=password] {
   .container {
     padding: 16px;
   }
-  
+  button.second{
+    background-color: red;
+  }
   span.psw {
     float: right;
     padding-top: 16px;

@@ -10,7 +10,7 @@ export class TreatmentsComponent implements OnInit {
   items : any 
   
   constructor(private http : HttpClient) {
-    http.get('http://localhost:8080/treatments').subscribe(data => this.items = data);
+    http.get('http://localhost:9000/treatments').subscribe(data => this.items = data);
    }
 
   ngOnInit() {

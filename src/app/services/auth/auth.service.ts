@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SignUpDto } from 'src/app/authentication/signup-dto';
 import { Observable } from 'rxjs';
 import { LoginDto } from 'src/app/authentication/login-dto';
-import { JwtResponse } from 'src/app/authentication/jwt';
+import { JwtResponse } from 'src/app/authentication/jwt-reponse';
+
 
 
 const httpOptions = {
@@ -16,13 +17,13 @@ const httpOptions = {
 export class AuthService {
 
   
-  private loginUrl = 'http://localhost:8080/auth/login';
-  private signupUrl = 'http://localhost:8080/auth/register';
+  private loginUrl = 'http://localhost:9000/auth/login';
+  private signupUrl = 'http://localhost:9000/auth/register';
   
   constructor(private http : HttpClient) { }
 
-  login(credentials: LoginDto): Observable<JwtResponse> {
-    return this.http.post<JwtResponse>(this.loginUrl, credentials, httpOptions);
+  login(loginRequest: LoginDto): Observable<JwtResponse> {
+    return this.http.post<JwtResponse>(this.loginUrl, loginRequest, httpOptions);
   }
   
 

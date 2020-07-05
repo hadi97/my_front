@@ -1,0 +1,56 @@
+select{
+  width:250px;
+}
+#delete{
+  background-color: red;
+}
+
+
+select,label{
+  margin-left:10px;
+}
+
+label{
+  font-size:20px;
+}
+
+
+#content{
+    height:640px;
+}
+
+#head{
+    margin-top:5px;
+    margin-left:40px;
+    font-size:25px;
+    font-weight: 600;
+}
+#table{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+#table td, #table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008CBA;
+  color: white;
+}
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+

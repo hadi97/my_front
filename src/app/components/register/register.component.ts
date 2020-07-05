@@ -20,36 +20,35 @@ export class RegisterComponent implements OnInit {
   warning:string;
   validData:boolean=true;
 
-  registerUser(event : any){
+  registerUser(event){
+    
+    console.log("Start register");
     event.preventDefault()
     const target = event.target;
 
     const surname=target.querySelector('#surname').value;
     const name=target.querySelector('#name').value;
     const pesel=target.querySelector('#pesel').value;
-    const birthdate=target.querySelector('#birthdate').value;
-    const city=target.querySelector('#city').value;
     const address=target.querySelector('#address').value;
-    const zipcode=target.querySelector('#zipcode').value;
     const sex=target.querySelector('#sex').value;
     const email=target.querySelector('#email').value;
     const password=target.querySelector('#password').value;
     const phone=target.querySelector('#phone').value;
      
     //check if there are blank inputs
-    if(this.ifBlankInputsExist(surname,name,pesel,birthdate,city,address,zipcode,sex,email,password,phone)==true
+    if(this.ifBlankInputsExist(surname,name,pesel,address,sex,email,password,phone)==true
       ){
-     this.warning="All fields are required !";
+     this.warning=" All fields are required !";
      this.validData=false;
       }else if(this.validateEmail(email)==false){
-        this.warning="Invalid email format";
+        this.warning=" Invalid email format";
        this.validData=false;
       }else if(this.validatePesel(pesel)==false){
         this.validData=false;
-        this.warning="Invalid Pesel format";
+        this.warning=" Invalid Pesel format";
       }else if(this.validatePassword(password)==false){
         this.validData=false;
-        this.warning="Password must be must contain at least 8 characters.";
+        this.warning=" Password must be must contain at least 8 characters.";
       }else
         this.validData=true;
     //
@@ -59,9 +58,7 @@ export class RegisterComponent implements OnInit {
       name,
       surname,
       pesel,
-      city,
       address,
-      zipcode,
       sex,
       phone
       );
@@ -81,9 +78,9 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  ifBlankInputsExist(surname : any,name : any,pesel : any,birthdate : any,city : any,address : any,zipcode : any,sex :any,email : any,password: any,phone: any){
-    if(surname.length == 0 || name.length == 0 || pesel.length ==0 || birthdate.length ==0 || city.length ==0
-      || address.length==0 || zipcode.length==0 || sex.length ==0 || email.length==0 || password.length==0 || phone.length==0
+  ifBlankInputsExist(surname : any,name : any,pesel : any,address : any,sex :any,email : any,password: any,phone: any){
+    if(surname.length == 0 || name.length == 0 || pesel.length ==0 
+      || address.length==0 || sex.length ==0 || email.length==0 || password.length==0 || phone.length==0
       ) 
       return true; //there are blank places
         
@@ -92,7 +89,7 @@ export class RegisterComponent implements OnInit {
 
 
   validateEmail(email : any){
-    const regexpEmail = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'); //validation 
+    const regexpEmail = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'); 
     if(regexpEmail.test(email)==false)
       return false;
     

@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class DoctorsComponent implements OnInit {
   items:any; 
   constructor(private http: HttpClient) {
-    http.get('http://localhost:8080/doctors').subscribe(data => this.items = data);
+    http.get('http://localhost:9000/doctors').subscribe(data => this.items = data);
    }
 
   ngOnInit() {

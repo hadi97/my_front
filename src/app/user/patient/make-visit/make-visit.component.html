@@ -1,0 +1,78 @@
+
+<div id="content">
+    <div *ngIf="warning===true" class="alert alert-warning">
+        <strong>warning!</strong>{{message}}
+    </div>
+    <div *ngIf="success===true">
+    <div class="alert alert-success">
+        <strong>Congrats !</strong> {{message}}
+      </div>
+      <div class="container">
+      <label id="warning">Fill the health card !</label>
+      <form (submit)="saveBooking($event)"  id="healthcard" class="border-class">
+          <div class="form-group">
+            <label for="medicines"><b>Medicines</b></label>
+            <br>
+            <textarea id="medicines"></textarea>
+            <br><br>
+          </div>
+            <div class="form-group">
+                <label for="diseases"><b>Diseases</b></label>
+                <br>
+                <textarea id="diseases"></textarea>
+                <br><br>
+              </div>
+            <div class="form-group">
+              <label for="allergy"><b>Allergy</b></label>
+              <br>
+              <textarea id="allergy"></textarea>
+              <br><br>
+            </div>
+            <div class="form-group">
+              <label for="bleeding"><b>Bleeding</b></label>
+              <br>
+              <textarea id="bleeding"></textarea>
+              <br><br>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submbit</button>
+          <br>
+          <button class="btn btn-secondary" routerLink="/myvisits">Go back</button>
+          <br>
+        </form>
+        </div>
+    </div>
+    
+    <form *ngIf="success===false" (submit)="bookVisit($event)" class="border-class">
+        <div class="container">
+          
+          <h2>Please fill in this form to book a visit.</h2>
+          <hr>
+          <div class="form-group">
+          <label for="visitTreatment">Choose treatment name : </label>
+          <select name = "visitTreatment" class="form-control" id="visitTreatment">
+            <option id="option" value="{{service.treatmentId}}" *ngFor="let service of services">{{service.treatmentName}}</option>
+          </select>
+        </div>
+        
+          <div class="form-group">
+              <label for ="visitData">Choose day for the visit : </label>
+              <select  class="form-control" id="visitData" on-change = "updateVisitDate($event)" >
+                <option   id="visitData" *ngFor="let t of myDate">{{t.date}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+              <label for ="visitTime">Choose time for the visit : </label>
+              <select  name = "visitTime" class="form-control" id="visitTime">
+                <option id="visitTime"  value="{{t}}" *ngFor="let t of periods">{{t}}</option>
+                </select>
+            </div>
+          </div>
+        <button type="submit" id="registerButton" class="btn btn-primary">Submit</button>
+        <br>
+        <div class="container signin">
+          <p><a href="#" routerLink="/myvisits">Go back</a></p>
+        </div>
+      </form>
+  

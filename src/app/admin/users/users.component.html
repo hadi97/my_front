@@ -1,0 +1,31 @@
+<div class="container" id="content">
+  <h2>All the users that are in the database</h2>
+    <table class="table table-hover"id="table">
+       <thead>
+         <tr>
+           <th scope="col">Id</th>
+           <th scope="col">Username</th>
+           <th scope="col">Name</th>
+           <th scope="col">Surname</th>
+           <th scope="col">Role</th>
+
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let item of allUsers">
+           <td><b>{{item.accountId}}</b></td>
+           <td>{{item.username}}</td>
+           <td>{{item.firstName}}</td>
+           <td>{{item.lastName}}</td>
+           <td>{{item.role}}</td>
+           <td id= "td" *ngIf="item.role=='patient'"><button id="delete" class="btn btn-danger" (click)="deleteUser($event, item.accountId)">Delete</button></td>
+         </tr>
+       </tbody>
+     </table>
+     <button id="addbutton" class="btn btn-primary" routerLink="/adduser">Add new user</button>
+     <br><br>
+   
+   </div>
+   
+
+   
